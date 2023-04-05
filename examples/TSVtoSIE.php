@@ -185,7 +185,7 @@ class TSVLoader
                 $object = $dim->getObject($data['result_unit']);
                 if ($object === null)
                 {
-                    $object = (new Data\Object($data['result_unit']))
+                    $object = (new Data\SIEObject($data['result_unit']))
                         ->setDimension($dim)
                         ->setName('Resultatenhet ' . $data['result_unit']); //We don't have this data, so just set it
                     $dim->addObject($object);
@@ -203,7 +203,7 @@ class TSVLoader
                 $object = $dim->getObject($data['project']);
                 if ($object === null)
                 {
-                    $object = (new Data\Object($data['project']))
+                    $object = (new Data\SIEObject($data['project']))
                         ->setDimension($dim)
                         ->setName('Projekt ' . $data['project']); //We don't have this data, so just set it
                     $dim->addObject($object);

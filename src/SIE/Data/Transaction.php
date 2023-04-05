@@ -25,8 +25,8 @@ class Transaction
     protected $account;
 
     /**
-     * Array with objects, uses the dimension as keys, and the value is set to Object.
-     * @var Object[]
+     * Array with objects, uses the dimension as keys, and the value is set to SIEObject.
+     * @var SIEObject[]
      */
     protected $objects;
 
@@ -106,7 +106,7 @@ class Transaction
     /**
      * Get object with dimension
      * @param int $dimension Dimension to search
-     * @return Object|null
+     * @return SIEObject|null
      */
     public function getObject($dimension)
     {
@@ -120,7 +120,7 @@ class Transaction
 
     /**
      * Get all objects for this transaction
-     * @return Object[]
+     * @return SIEObject[]
      */
     public function getObjects()
     {
@@ -129,11 +129,11 @@ class Transaction
 
     /**
      * Add object to the transaction
-     * @param \SIE\Data\Object $object
+     * @param \SIE\Data\SIEObject $object
      * @return Transaction
      * @throws DomainException
      */
-    public function addObject(Object $object)
+    public function addObject(SIEObject $object)
     {
         $dimensionId = $object->getDimension()->getId();
         // check that we only add one object per dimension
